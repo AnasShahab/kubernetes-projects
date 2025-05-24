@@ -1,1 +1,11 @@
 # kubernetes-projects
+- nginx
+    - nginx deployment
+    - nginx service to expose the application
+- mongo db
+    - mongodb db deployment
+    - mondo db service to expose the application
+    - mongo express deployment
+    - secrets and config maps usage
+- ingress
+    -   ingress deployment to expose minikube dashboard
