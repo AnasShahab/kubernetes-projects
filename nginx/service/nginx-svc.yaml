@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: nginx-svc
+  name: nginx-svc
+spec:
+  ports:
+  - name: nginx-svc
+    port: 8080 # port exposed by the Service (nginx-svc)
+    protocol: TCP
+    targetPort: 80 # port on the Pod (nginx container)
+    #nodePort: 30000
+  selector:
+    app: nginx-pod
+  type: ClusterIP
+  #type: LoadBalancer

@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-configmap
+data:
+  nginx_url: nginx-svc
+  index.html: |
+    <html><body><h1>Welcome to nginx-app.com!</h1></body></html>
+
+  404.html: |
+    <html><body style="text-align:center;">
+    <h1>404 - Page Not Found</h1>
+    <p>This page does not exist.</p></body></html>
+
+  default.conf: |
+    server {
+        listen 80;
+        server_name localhost;
+
+        location / {
+            root /usr/share/nginx/html;
+            index index.html;
+            try_files $uri $uri/ =404;
+        }
+
+        error_page 404 /404.html;
+        location = /404.html {
+            root /usr/share/nginx/html;
+            internal;
+        }
+    }
+  index-fallback.html: |
+    <html>
+      <head><title>404 Not Found</title></head>
+      <body style="text-align:center;">
+        <h1>Oops! Page not found</h1>
+        <p>This is the default fallback page served by Traefik & Anas.</p>
+      </body>
+    </html>

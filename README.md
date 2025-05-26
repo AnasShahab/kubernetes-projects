@@ -1,11 +1,5 @@
 # kubernetes-projects
-- nginx
-    - nginx deployment
-    - nginx service to expose the application
-- mongo db
-    - mongodb db deployment
-    - mondo db service to expose the application
-    - mongo express deployment
-    - secrets and config maps usage
-- ingress
-    -   ingress deployment to expose minikube dashboard
+## nginx
+**This project demonstrates how to deploy a customized NGINX application on Kubernetes, complete with custom error pages, ingress routing via both Traefik and NGINX controllers, and a fallback mechanism for handling failures or direct IP access. It also includes a test pod for validating service connectivity.**
+
+## mongodb

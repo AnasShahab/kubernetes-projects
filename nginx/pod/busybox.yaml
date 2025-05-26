@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: busybox-pod
+  name: busybox-pod
+spec:
+  containers:
+  - image: busybox
+    name: busybox-ct
+    command: ["sh", "-c", "wget http://$CONFIG_NGINX_SERVER:8080  && sleep 3600"]
+    #command: ["sh", "-c", "wget http://nginx-svc:8080  && sleep 3600"] # when nginx-configmap is not used
+    env:
+      - name: CONFIG_NGINX_SERVER
+        valueFrom:
+          configMapKeyRef:
+            name: nginx-configmap
+            key: nginx_url
+  restartPolicy: Never
