@@ -5,12 +5,12 @@ metadata:
 data:
   nginx_url: nginx-svc
   index.html: |
-    <html><body><h1>Welcome to nginx-app.com!</h1></body></html>
+    <html><body><h1>Welcome to nginx-app.com! This is the default page</h1></body></html>
 
   404.html: |
     <html><body style="text-align:center;">
     <h1>404 - Page Not Found</h1>
-    <p>This page does not exist.</p></body></html>
+    <p>This page does not exist</p></body></html>
 
   default.conf: |
     server {
@@ -34,6 +34,6 @@ data:
       <head><title>404 Not Found</title></head>
       <body style="text-align:center;">
         <h1>Oops! Page not found</h1>
-        <p>This is the default fallback page served by Traefik & Anas.</p>
+        <p>This is the default fallback page</p>
       </body>
     </html>
