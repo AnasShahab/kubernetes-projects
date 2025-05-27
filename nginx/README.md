@@ -2,8 +2,6 @@
 ## nginx
 **This project demonstrates how to deploy a customized NGINX application on Kubernetes, complete with custom error pages, ingress routing via both Traefik and NGINX controllers, and a fallback mechanism for handling failures or direct IP access. It also includes a test pod for validating service connectivity.**
 
-![nginx-architecture](nginx-architecture.png "nginx architecture")
-
 ### configmap/nginx-configmap.yaml
 > Creates a ConfigMap containing custom Nginx configuration and static HTML pages.
 - index.html: Serves as the default page (*http://nginx-app.com*)
